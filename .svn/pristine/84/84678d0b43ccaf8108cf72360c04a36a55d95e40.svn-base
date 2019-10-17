@@ -1,0 +1,119 @@
+---- Comments from the Reviewers: ----
+Importance/Relevance: Of sufficient interest
+Comment on Importance/Relevance: 
+The paper presents an approach for recognizing the activity
+of a person using egocentric videos, taken with a wearable 
+camera (usually mounted on the forehead). A two stream 
+Convolutional Neural Network (CNN) with Long Short-Term 
+Memory (LSTM) architecture, having separate streams for 
+objects and motion was used. 
+
+Novelty/Originality/Contribution: Moderately original
+Comment on Novelty/Originality/Contribution: 
+The paper presents an approach for recognizing the activity
+of a person using egocentric videos, taken with a wearable 
+camera (usually mounted on the forehead). A two stream 
+Convolutional Neural Network (CNN) with Long Short-Term 
+Memory (LSTM) architecture, having separate streams for 
+objects and motion was used. 
+
+Technical Correctness: Definitely correct
+Comment on Technical Correctness: 
+yes
+
+Experimental Validation: Limited but convincing
+Comment on Experimental Validation: 
+Experimental results are performed on six databases, according
+to the Table 1. Two networks, using VGG-16 and ResNet-50.  
+Variations of the LSTM architecture have been used and all
+the training used are provided.
+
+The confusion matrix results from Figure 4, show good recognition 
+results for most categories of activities, except for "Fold" where 
+they are very poor (17%). There are no explanations provided for 
+the poor result in this case.
+
+
+Clarity of Presentation: Clear enough
+Comment on Clarity of Presentation: 
+yes
+
+Reference to Prior Work: References adequate
+Comment on Reference to Prior Work: 
+This approach was proposed by
+Simonyan, K., Zisserman, A.. Two-stream convolutional networks 
+for action recognition in videos. In: Proc. of 27th Int.
+Conf. on Neural Information Processing Systems (NIPS). 2014. 
+p. 568-576.
+LSTM with 2 processing streams was used for human 
+activity recognition in others papers as well.
+
+
+General Comments to Authors: 
+The paper presents an approach for recognizing the activity
+of a person using egocentric videos, taken with a wearable 
+camera (usually mounted on the forehead). A two stream 
+Convolutional Neural Network (CNN) with Long Short-Term 
+Memory (LSTM) architecture, having separate streams for 
+objects and motion was used. This approach was proposed by
+Simonyan, K., Zisserman, A.. Two-stream convolutional networks 
+for action recognition in videos. In: Proc. of 27th Int.
+Conf. on Neural Information Processing Systems (NIPS). 2014. 
+p. 568-576.
+LSTM with 2 processing streams was used for human 
+activity recognition in others papers as well.
+
+Experimental results are performed on six databases, according
+to the Table 1. Two networks, using VGG-16 and ResNet-50.  
+Variations of the LSTM architecture have been used and all
+the training used are provided.
+
+The confusion matrix results from Figure 4, show good recognition 
+results for most categories of activities, except for "Fold" where 
+they are very poor (17%). There are no explanations provided for 
+the poor result in this case.
+
+
+
+-----
+Importance/Relevance: Of sufficient interest
+
+Novelty/Originality/Contribution: Minor originality
+Comment on Novelty/Originality/Contribution: 
+This paper uses two-stream network to classify egocentric actions with some tricks (curriculum training, resizing input image). The results significantly surpass other state-of-the-arts while the novelty is limited.
+
+Technical Correctness: Definitely correct
+
+Experimental Validation: Limited but convincing
+
+Clarity of Presentation: Clear enough
+
+Reference to Prior Work: References adequate
+Comment on Reference to Prior Work: 
+The authors should label the references of state-of-the-arts in Table 1. 
+
+
+-----
+Importance/Relevance: Of sufficient interest
+
+Novelty/Originality/Contribution: Minor originality
+Comment on Novelty/Originality/Contribution: 
+Matching the training and test conditions is good engineering practice, but not really original. And in order to justify the generic nature of the algorithm as a novel aspect, the authors should explain why this has not been possible in the literature. Unless there is an algorithmic limitation, but rather it is a case of the choice of datasets for the experimental validation... it is of course always useful to see ideas tested on new use cases, but sometimes the impact is not that strong.
+
+Technical Correctness: Probably correct
+
+Experimental Validation: Limited but convincing
+Comment on Experimental Validation: 
+- " We have selected ResNet-50 over VGG-16 because of its better empirical performance on our dataset. "
+For a fair comparison, all competitors should be using the same training data. What do the competitors use?
+- What is the rationale for choosing the specified parameters for training? If one were to use another training set, how would one choose the parameters?
+
+Clarity of Presentation: Clear enough
+
+Reference to Prior Work: References adequate
+
+General Comments to Authors: 
+- [20] seems to have a reasonable diversity of actions. It is not clear what "categories" mean, and why [20] cannot be trained to recognise the actions presented in this paper. There does not seem to be an algorithmic limitation.
+
+-----
+

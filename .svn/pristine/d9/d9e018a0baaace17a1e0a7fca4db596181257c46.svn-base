@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\begin{document}
+
+\title{Review Feedback}
+\maketitle
+\begin{center}
+\section*{Reviewer 1}
+\end{center}
+
+\begin{enumerate}
+\item The authors should label the references of state-of-the-arts in Table 1 \\
+
+Thanks for your valuable suggestion we have cited all the state-of-the-art references in the table 1.
+
+\begin{center}
+\section*{Reviewer 2}
+\end{center}
+
+
+\item Matching the training and test conditions is good engineering practice, but not really original. And in order to justify the generic nature of the algorithm as a novel aspect, the authors should explain why this has not been possible in the literature. Unless there is an algorithmic limitation, but rather it is a case of the choice of datasets for the experimental validation... it is of course always useful to see ideas tested on new use cases, but sometimes the impact is not that strong. \\
+
+ Earlier methods like [23] heavily rely on the hand-object interactions and ego-motion cue whereas [20] only takes sparse flow information.[12] has two stream architecture but used there own convolutional network without any sequential model. [20] can address both types of action classes because it contains flow and RGB stream but doesn't exploit the temporal information. Our method use RGB stream to learn about hand-object interactions and flow provides ego-motion cue, this is useful for action category where hand-object interactions are present. For other action category, flow stream is sufficient to recognize the actions.
+
+\item We have selected ResNet-50 over VGG-16 because of its better empirical performance on our dataset. For a fair comparison, all competitors should be using the same training data. What do the competitors use? \\
+
+We appreciate your comment about feature extraction but the training data for our problem is RGB images which are same for all the competitors. ResNet-50/VGG-16 is part of our architecture used to extract spatial features. 
+
+
+\item What is the rationale for choosing the specified parameters for training? If one were to use another training set, how would one choose the parameters? \\
+
+Choosing an appropriate hyperparameter is always a concern in deep learning models. We have tested different hyperparameters while training on GTEA and used same hyperparameters for all remaining dataset.
+
+
+
+\item  Paper [20] seems to have a reasonable diversity of actions. It is not clear what "categories" mean, and why [20] cannot be trained to recognise the actions presented in this paper. There does not seem to be an algorithmic limitation.  \\
+
+The input for the architecture used in Paper [20] takes sparse optical flow. The action classes in [20] does not involve hand-object interactions. Whereas our RGB stream takes care of object present in the scene which is beneficial for the actions having hand-object interactions.
+
+\begin{center}
+\section*{Reviewer 3}
+\end{center}
+\item The confusion matrix results from Figure 4, show good recognition results for most categories of activities, except for "Fold" where they are very poor (17\%). There are no explanations provided for the poor result in this case. \\
+
+Thank you so much for addressing this issue. The reason for Fold class confusion with Put is mainly due to limited amount of training samples for Fold classes.
+
+\item This approach was proposed by Simonyan, K., Zisserman, A.. Two-stream convolutional networks for action recognition in videos. In: Proc. of 27th Int. Conf. on Neural Information Processing Systems (NIPS). 2014. p. 568-576. LSTM with 2 processing streams was used for human activity recognition in others papers as well. \\
+
+We appreciate your comment about the novelty of our approach. We have mentioned two state-of-the-art works [12] and [23] using two stream architectures. There are methods that have used LSTM for action recognitions as well but none of them have shown it working on egocentric actions. Most of the methods rely heavily on learning ego-motion and hand object cues using different streams and complicated networks. Our purpose was to show that existing two stream CNN-LSTM methods used in third person action recognition can also be used in first person action recognition with few modifications like curriculum learning and object resizing to recognize wide category of actions.
+
+\end{enumerate}
+
+\end{document}
+
